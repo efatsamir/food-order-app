@@ -11,7 +11,7 @@ const useFetchMeals = () => {
       setError(null);
 
       try {
-        const res = await fetch('https://react-app-458ee-default-rtdb.firebaseio.com/meals.json');
+        const res = await fetch(process.env.REACT_APP_BACKEND_URI);
         if(!res.ok) throw new Error('Failed to fetch!');
         const resData = await res.json();
  
